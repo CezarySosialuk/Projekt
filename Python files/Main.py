@@ -1,5 +1,6 @@
 #zapisywanie krótkich notatek (aplikacja do zapisywania tekstu brudnopis)#
 
+import os
 import Zapis
 
 AppRunning = True
@@ -39,8 +40,16 @@ while bool(AppRunning):
 
 
     elif int(mode) == 3:
-        print("tutaj usuwanie notatek")
         AppRunning = False
+
+        print("lista notatek:")
+
+        index = open("index.txt", 'r')
+        print(index.read())
+
+        os.remove("Notes/" + input("który plik chcesz usunąć?") + ".txt")
+
+        print("notatka usunięta")
 
         if input("Czy chcesz kontynuować? (y/n):") == 'y':
             AppRunning = True
