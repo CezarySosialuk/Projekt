@@ -2,8 +2,8 @@
 
 import Zapis
 
-InMenu = True
-while bool(InMenu):
+AppRunning = True
+while bool(AppRunning):
 #menu#
     print("Zapisywanie notatek")
     print("1. Otwórz notatke")
@@ -12,17 +12,38 @@ while bool(InMenu):
     mode = input("Podaj numer funkcji:")
 #menu end#
     if int(mode) == 1:
-        print("tutaj pokazanie listy notatek")
-        InMenu = False
+        AppRunning = False
+
+        index = open("index.txt", 'r')
+        print(index.read())
+
+        odczyt = open("Notes/" + input("który plik chcesz otworzyć: ") + ".txt", 'r')
+        print(odczyt.read())
+
+        if input("Czy chcesz kontynuować? (y/n):") == 'y':
+            AppRunning = True
 
     elif int(mode) == 2:
-        print("tutaj zapisywanie nowej notatki")
-        InMenu = False
-        Zapis.ZapisanieNotatki(input("tytuł notatki"))
+        AppRunning = False
+
+        name = input("tytuł notatki: ")
+
+        index = open("index.txt", "a")
+        index.write(name + "\n")
+
+        Zapis.ZapisanieNotatki(name)
+
+        print("Notatka zapisana")
+        if input("Czy chcesz kontynuować? (y/n):") == 'y':
+            AppRunning = True
+
 
     elif int(mode) == 3:
         print("tutaj usuwanie notatek")
-        InMenu = False
+        AppRunning = False
+
+        if input("Czy chcesz kontynuować? (y/n):") == 'y':
+            AppRunning = True
 
     else:
         print("~")
