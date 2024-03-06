@@ -1,3 +1,12 @@
-def ZapisanieNotatki(tytul):
-    with open("Notes/" + tytul + ".txt", 'w') as f:
-        f.write(input("twoja notatka:\n"))
+def ZapisanieNotatki():
+
+    name = input("tytuł notatki: ")
+
+    index = open("index.txt", "a")
+
+    index.write(name + "\n")
+
+    f = open("Notes/" + name + ".txt", 'w')
+    f.write(input("twoja notatka:\n"))
+
+    print("Notatka zapisana")
