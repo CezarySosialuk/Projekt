@@ -1,5 +1,7 @@
 #zapisywanie krótkich notatek (aplikacja do zapisywania tekstu brudnopis)#
 
+import Zapis
+
 InMenu = True
 while bool(InMenu):
 #menu#
@@ -12,16 +14,17 @@ while bool(InMenu):
     if int(mode) == 1:
         print("tutaj pokazanie listy notatek")
         InMenu = False
+
     elif int(mode) == 2:
         print("tutaj zapisywanie nowej notatki")
         InMenu = False
+        Zapis.ZapisanieNotatki(input("tytuł notatki"))
+
     elif int(mode) == 3:
         print("tutaj usuwanie notatek")
         InMenu = False
+
     else:
         print("~")
         print("Wybrano niewłaściwą opcję")
         print("~")
-
-#with open("Notes/note1.txt", 'w') as f:#
-#    f.write('text')#
