@@ -10,7 +10,7 @@ while bool(AppRunning):
     print("Zapisywanie notatek")
     print("1. Otwórz notatke")
     print("2. Napisz notatke")
-    print("3. Usuń notatke")
+#    print("3. Usuń notatke")
     mode = input("Podaj numer funkcji:")
 #menu end#
     if int(mode) == 1:
@@ -28,12 +28,12 @@ while bool(AppRunning):
             AppRunning = True
 
 
-    elif int(mode) == 3:
-        Yeet.Usuniecie()
+#    elif int(mode) == 3:
+#        Yeet.Usuniecie()
 
-        AppRunning = False
-        if input("Czy chcesz kontynuować? (y/n):") == 'y':
-            AppRunning = True
+#        AppRunning = False
+#        if input("Czy chcesz kontynuować? (y/n):") == 'y':
+#            AppRunning = True
 
     else:
         print("~")
