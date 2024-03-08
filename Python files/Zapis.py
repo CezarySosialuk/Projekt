@@ -1,12 +1,12 @@
-import sys, locale
+import codecs
 def ZapisanieNotatki():
     name = input("tytuł notatki: ")
 
     try:
-        index = open("index.txt", "a")
+        index = codecs.open("index.txt", "a", "utf-8")
         index.write(name + "\n")
 
-        f = open("Notes/" + name + ".txt", 'w')
+        f = codecs.open("Notes/" + name + ".txt", 'w', "utf=8")
     except:
         print("nazwa i notatka nie mogą zawierać polskich znaków")
     else:
@@ -16,10 +16,6 @@ def ZapisanieNotatki():
         except:
             print("nazwa i notatka nie mogą zawierać polskich znaków")
         else:
-            index = open("index.txt", "a")
-
-            index.write(name + "\n")
-
             print("Notatka zapisana")
 
 
