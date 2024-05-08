@@ -1,12 +1,9 @@
 import Zapis
 import Odczyt
-import Yeet
-import Exit
+import Yeet     #usuniencie plików#
+import Exit     #zakończenie programu z poziomu funkcji#
 import FilesList
-import DEV
-
-
-AppRunning = True
+import DEV      #funkcja twożąca gotową notatkę do testowania#
 
 while bool(AppRunning):
     print("\nZapisywanie notatek")
@@ -36,7 +33,7 @@ while bool(AppRunning):
             FilesList.wypisz_spis_plikow()
 
         case "5":
-            Exit.break_app()
+            AppRunning = False
 
         case "10":
             DEV.lorem_note()
