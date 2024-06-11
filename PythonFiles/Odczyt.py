@@ -35,3 +35,4 @@ def odczytanie_notatki():
                 print("Brak notatek. ")
     except Exception as error_name:
         print(f"Wystąpił błąd: {str(error_name)}")
+

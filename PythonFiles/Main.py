@@ -4,6 +4,9 @@ import Yeet     #usuniencie plików#
 import Exit     #zakończenie programu z poziomu funkcji#
 import FilesList
 import DEV      #funkcja twożąca gotową notatkę do testowania#
+import Fav
+
+AppRunning = True
 
 while bool(AppRunning):
     print("\nZapisywanie notatek")
@@ -11,7 +14,9 @@ while bool(AppRunning):
     print("2. Otwórz notatkę")
     print("3. Usuń notatkę")
     print("4. Wypisz pliki")
-    print("5. Zakończ")
+    print("5. dodaj notatke do ulubionych")
+    print("6. wyswietl ulubione")
+    print("9. Zakończ")
     print("10. Dev (Utwórz nowy plik o treści Lorem Ispum)\n")
     mode = input("Podaj numer funkcji: ")
 
@@ -33,6 +38,12 @@ while bool(AppRunning):
             FilesList.wypisz_spis_plikow()
 
         case "5":
+            Fav.favourite()
+
+        case "6":
+            FilesList.wypisz_ulubione()
+
+        case "9":
             AppRunning = False
 
         case "10":
